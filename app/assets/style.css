@@ -1,0 +1,293 @@
+/* ChurnGuard — Modern Glassmorphism Theme (Dark Forced) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-main: #0b0f19;
+    --bg-card: #131b2e;
+    --bg-card-hover: #18223b;
+    --accent-purple: #8b5cf6;
+    --accent-purple-glow: rgba(139, 92, 246, 0.25);
+    --accent-emerald: #10b981;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+    --accent-rose: #f43f5e;
+    --accent-rose-glow: rgba(244, 63, 94, 0.25);
+    --accent-indigo: #6366f1;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border-card: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(139, 92, 246, 0.4);
+}
+
+* {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+}
+
+/* Background & Body */
+.stApp {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+/* Top Streamlit Header */
+header, [data-testid="stHeader"] {
+    background-color: #0b0f19 !important;
+}
+
+/* Sidebar Custom Styling */
+[data-testid="stSidebar"] {
+    background-color: #0f172a !important;
+    border-right: 1px solid var(--border-card) !important;
+}
+
+[data-testid="stSidebar"] *, 
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div {
+    color: #f8fafc !important;
+}
+
+/* Input Fields, Selectboxes & Radios */
+[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+[data-testid="stSidebar"] input,
+[data-testid="stSidebar"] div[data-baseweb="input"] {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #334155 !important;
+    border-radius: 8px !important;
+}
+
+div[data-baseweb="popover"] div,
+div[data-baseweb="menu"] {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+}
+
+/* Top Header Navigation Bar */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: rgba(19, 27, 46, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.brand-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #c084fc 0%, #8b5cf6 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid var(--border-glow);
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #c084fc;
+}
+
+/* Modern Card Container */
+.glass-card {
+    background: rgba(19, 27, 46, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Explainer Guide Card */
+.guide-box {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-left: 4px solid var(--accent-purple);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+}
+.guide-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #c084fc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.guide-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+.guide-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+/* Risk Gauge Cards */
+.risk-meter-card {
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+}
+.risk-meter-high {
+    background: radial-gradient(circle at top, rgba(244, 63, 94, 0.15) 0%, rgba(19, 27, 46, 0.95) 70%);
+    border-color: var(--accent-rose);
+    box-shadow: 0 0 30px var(--accent-rose-glow);
+}
+.risk-meter-low {
+    background: radial-gradient(circle at top, rgba(16, 185, 129, 0.15) 0%, rgba(19, 27, 46, 0.95) 70%);
+    border-color: var(--accent-emerald);
+    box-shadow: 0 0 30px var(--accent-emerald-glow);
+}
+.risk-val-big {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+.risk-meter-high .risk-val-big { color: var(--accent-rose); }
+.risk-meter-low .risk-val-big { color: var(--accent-emerald); }
+
+.risk-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.risk-meter-high .risk-badge {
+    background: rgba(244, 63, 94, 0.2);
+    color: #fca5a5;
+    border: 1px solid var(--accent-rose);
+}
+.risk-meter-low .risk-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+    border: 1px solid var(--accent-emerald);
+}
+
+/* Custom HTML Table Styling */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+.custom-table th {
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-card);
+}
+.custom-table td {
+    background: #131b2e;
+    color: #f8fafc;
+    font-size: 0.9rem;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+.metric-badge-purple {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+.metric-badge-emerald {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Streamlit Tabs Customization */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent;
+    padding: 4px;
+    border-bottom: 1px solid var(--border-card);
+}
+.stTabs [data-baseweb="tab"] {
+    height: 48px;
+    white-space: pre;
+    border-radius: 10px;
+    color: #94a3b8 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+    color: #c084fc !important;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Button Styling */
+.stButton button[kind="primary"] {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-indigo) 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 12px 24px !important;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4) !important;
+    transition: all 0.2s ease !important;
+}
+.stButton button[kind="primary"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6) !important;
+}
